@@ -21,5 +21,7 @@
 | Agoda.com | Оплата через сайт | Сингапур | На сайте Agoda | Нет  |
 
 ### Use-case диаграмма
+![UserCases](./lab_01/docs/ppo_uc.png)
 
 ### ER-диаграмма сущностей
+![ER](./lab_01/docs/ppo_er.png)
