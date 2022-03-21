@@ -1,1 +1,0 @@
-# BMSTU-Software-Design-sem6
