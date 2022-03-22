@@ -6723,11 +6723,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ConsoleApp1\\TestStart.csproj",
+      "projectUniqueName": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\TestStart\\TestStart.csproj",
       "projectName": "TestStart",
-      "projectPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ConsoleApp1\\TestStart.csproj",
+      "projectPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\TestStart\\TestStart.csproj",
       "packagesPath": "C:\\Users\\kiv09\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ConsoleApp1\\obj\\",
+      "outputPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\TestStart\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kiv09\\AppData\\Roaming\\NuGet\\NuGet.Config",

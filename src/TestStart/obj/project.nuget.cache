@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y/x1KKnFL9m9PgNSAYlcg6y1e6iFufejBqMTO4IuVNTH2oleYTJe9sH01ezeh+J92EIgohMpapORluVWhcs6nw==",
+  "dgSpecHash": "SO+pV5ubCY/Ymqutrow/O+AiA/Qt++vM0a3QdKRZWhrQsBHNTb9c3Y+prQ0jgVqJsb0JvkcjHejAnu9XtGZM4Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ConsoleApp1\\TestStart.csproj",
+  "projectFilePath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\TestStart\\TestStart.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kiv09\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\kiv09\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",

@@ -21,25 +21,21 @@ namespace ComponentAccessToDB
         {
             if (perms == (int)Permissions.Guest)
             {
-                Console.WriteLine("Connections:ConnectAsGuest");
                 //return config["Connections:ConnectAsGuest"];
                 return "Connections:ConnectAsGuest";
             }
             else if (perms == (int)Permissions.Analytic)
             {
-                Console.WriteLine("Connections:ConnectAsAnalytic");
                 //return config["Connections:ConnectAsAnalytic"];
                 return "Connections:ConnectAsAnalytic";
             }
             else if (perms == (int)Permissions.Manager)
             {
-                Console.WriteLine("Connections:ConnectAsManager");
                 //return config["Connections:ConnectAsManager"];
                 return "Connections:ConnectAsManager";
             }
             else
             {
-                Console.WriteLine("Connections:ConnectAsModer");
                 //return config["Connections:ConnectAsModer"];
                 return "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=1830";
             }
