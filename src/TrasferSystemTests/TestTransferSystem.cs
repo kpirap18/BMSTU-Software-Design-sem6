@@ -413,15 +413,15 @@ namespace TrasferSystemTests
             }
 
             visitors = rep.GetVisitorsByManagement(new Management { Managementid = 3 });
-            //Assert.IsNotNull(visitors, "Can't find visitors");
-            //if (visitors != null)
-            //{
-            //    Console.WriteLine("PASSED Can find visitors");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("        FAILED Can't find visitors");
-            //}
+            Assert.IsNotNull(visitors, "Can't find visitors");
+            if (visitors != null)
+            {
+                Console.WriteLine("PASSED Can find visitors");
+            }
+            else
+            {
+                Console.WriteLine("        FAILED Can't find visitors");
+            }
 
             rep.Delete(visitor);
         }
