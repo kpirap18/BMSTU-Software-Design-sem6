@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrasferSystemTests", "Trasf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestStart", "TestStart\TestStart.csproj", "{05168F24-AAB3-4D53-A98B-436C88312B5A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComponentBuisinessLogic", "ComponentBuisinessLogic\ComponentBuisinessLogic.csproj", "{1D82C581-DC31-4E04-825C-1BD82A127038}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{05168F24-AAB3-4D53-A98B-436C88312B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05168F24-AAB3-4D53-A98B-436C88312B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05168F24-AAB3-4D53-A98B-436C88312B5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D82C581-DC31-4E04-825C-1BD82A127038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D82C581-DC31-4E04-825C-1BD82A127038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D82C581-DC31-4E04-825C-1BD82A127038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D82C581-DC31-4E04-825C-1BD82A127038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
