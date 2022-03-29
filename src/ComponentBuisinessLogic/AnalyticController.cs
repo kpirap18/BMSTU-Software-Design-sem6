@@ -10,11 +10,11 @@ namespace ComponentBuisinessLogic
 {
     public class AnalyticController : UserController
     {
-        public AnalyticController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IPlayerRepository playerRep, ITeamRepository teamRep, IManagementRepository managementRep, IDesiredPlayersRepository desiredPlayerRep, IStatisticsRepository statRep) : 
-            base(user, logger, funcRep, playerRep, teamRep, managementRep, desiredPlayerRep, statRep)
+        public AnalyticController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IVisitorRepository visitorRep, IHotelRepository hotelRep, IManagementRepository managementRep, IInterestVisitorsRepository intervisitorRep, IStatisticsRepository statRep) : 
+            base(user, logger, funcRep, visitorRep, hotelRep, managementRep, intervisitorRep, statRep)
         {
         }
-        public List<Desiredplayer> GetAllDesiredPlayers()
+        public List<InterestVisitor> GetAllInterstVisitors()
         {
             Management management = managementRepository.FindByAnalytic(_user.Id);
             return desiredPlayers.GetPlayersByManagement(management);

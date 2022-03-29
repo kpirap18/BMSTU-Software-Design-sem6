@@ -10,59 +10,59 @@ namespace ComponentBuisinessLogic
 {
     public class UserController
     {
-        protected IPlayerRepository playerRepository;
-        protected ITeamRepository teamRepository;
-        protected IDesiredPlayersRepository desiredPlayers;
+        protected IVisitorRepository visitorRepository;
+        protected IHotelRepository hotelRepository;
+        protected IInterestVisitorsRepository interestVisitors;
         protected IStatisticsRepository statisticsRepository;
         protected IManagementRepository managementRepository;
         protected IFunctionsRepository functionsRepository;
         protected Userinfo _user;
         protected ILogger<UserController> _logger;
-        public UserController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IPlayerRepository playerRep, ITeamRepository teamRep, IManagementRepository managementRep, IDesiredPlayersRepository desiredPlayerRep, IStatisticsRepository statRep)
+        public UserController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IVisitorRepository visitorRep, IHotelRepository hotelRep, IManagementRepository managementRep, IInterestVisitorsRepository interestVisitorRep, IStatisticsRepository statRep)
         {
-            playerRepository = playerRep;
-            teamRepository = teamRep;
-            desiredPlayers = desiredPlayerRep;
+            visitorRepository = visitorRep;
+            hotelRepository = hotelRep;
+            interestVisitors = interestVisitorRep;
             statisticsRepository = statRep;
             managementRepository = managementRep;
             functionsRepository = funcRep;
             _user = user;
             _logger = logger;
         }
-        public List<Player> GetAllPlayers()
+        public List<Visitor> GetAllVisitors()
         {
-            return playerRepository.GetAll();
+            return visitorRepository.GetAll();
         }
-        public List<PlayersTeamStat> GetPlayerTeamStat()
+        public List<VisitorHotelStat> GetVisitorHotelStat()
         {
-            return functionsRepository.GetPlayersTeamStat();
+            return functionsRepository.GetVisitorHotelStat();
         }
-        public List<Player> GetPlayersByTeam(int teamID)
+        public List<Visitor> GetVisitorsByHotel(int hotelID)
         {
-            Team team = teamRepository.FindTeamByID(teamID);
-            return playerRepository.GetPlayersByTeam(team);
+            Hotel hotel = hotelRepository.FindHotelByID(hotelID);
+            return visitorRepository.GetVisitorsByHotel(hotel);
         }
-        public Player FindPlayerByID(int id)
+        public Visitor FindVisitorByID(int id)
         {
-            return playerRepository.FindPlayerByID(id);
+            return visitorRepository.FindVisitorByID(id);
         }
-        public Player FindPlayerByName(string name)
+        public Visitor FindVisitorByName(string name)
         {
-            return playerRepository.FindPlayerByName(name);
+            return visitorRepository.FindVisitorByName(name);
         }
-        public List<Team> GetAllTeams()
+        public List<Hotel> GetAllHotels()
         {
-            return teamRepository.GetAll();
+            return hotelRepository.GetAll();
         }
-        public Team FindTeamByID(int id)
+        public Hotel FindHotelByID(int id)
         {
-            return teamRepository.FindTeamByID(id);
+            return hotelRepository.FindHotelByID(id);
         }
-        public Team FindTeamByName(string name)
+        public Hotel FindHotelByName(string name)
         {
-            return teamRepository.FindTeamByName(name);
+            return hotelRepository.FindHotelByName(name);
         }
-        public Statistic GetPlayerStatistic(int id)
+        public Statistic GetVisitorStatistic(int id)
         {
             return statisticsRepository.GetStatisticByID(id);
         }

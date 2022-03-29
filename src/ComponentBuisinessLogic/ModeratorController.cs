@@ -12,8 +12,8 @@ namespace ComponentBuisinessLogic
     {
         IAvailableDealsRepository dealsRepository;
         IUserInfoRepository userInfoRepository;
-        public ModeratorController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IUserInfoRepository userRep, IAvailableDealsRepository dealsRep, IPlayerRepository playerRep, ITeamRepository teamRep, IManagementRepository managementRep, IDesiredPlayersRepository desiredPlayerRep, IStatisticsRepository statRep) :
-            base(user, logger, funcRep, playerRep, teamRep, managementRep, desiredPlayerRep, statRep)
+        public ModeratorController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IUserInfoRepository userRep, IAvailableDealsRepository dealsRep, IVisitorRepository visitorRep, IHotelRepository hotelRep, IManagementRepository managementRep, IInterestVisitorsRepository interestVisitorRep, IStatisticsRepository statRep) :
+            base(user, logger, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep)
         {
             dealsRepository = dealsRep;
             userInfoRepository = userRep;
@@ -26,31 +26,31 @@ namespace ComponentBuisinessLogic
                 _logger.LogError("Deal {Number} was not fount at {dateTime}", dealID, DateTime.UtcNow);
                 return false;
             }
-            Team newTeam = teamRepository.FindTeamByManagement((int)deal.Frommanagementid);
-            if (newTeam == null)
+            Hotel newHotel = hotelRepository.FindHotelByManagement((int)deal.Frommanagementid);
+            if (newHotel == null)
             {
-                _logger.LogError("New team was not fount by Tomanagementid {id} at {dateTime}", (int)deal.Tomanagementid, DateTime.UtcNow);
+                _logger.LogError("New hotel was not fount by Tomanagementid {id} at {dateTime}", (int)deal.Tomanagementid, DateTime.UtcNow);
                 return false;
             }
-            Team lastTeam = teamRepository.FindTeamByManagement((int)deal.Tomanagementid);
-            if (lastTeam == null)
+            Hotel lastHotel = hotelRepository.FindHotelByManagement((int)deal.Tomanagementid);
+            if (lastHotel == null)
             {
-                _logger.LogError("Last team was not fount by Frommanagementid {id} at {dateTime}", (int)deal.Frommanagementid, DateTime.UtcNow);
+                _logger.LogError("Last hotel was not fount by Frommanagementid {id} at {dateTime}", (int)deal.Frommanagementid, DateTime.UtcNow);
                 return false;
             }
-            Player player = playerRepository.FindPlayerByID((int)deal.Playerid);
-            if (player == null)
+            Visitor visitor = visitorRepository.FindVisitorByID((int)deal.VisitorID);
+            if (visitor == null)
             {
-                _logger.LogError("Player {Number} was not fount at {dateTime}", (int)deal.Playerid, DateTime.UtcNow);
+                _logger.LogError("Visitor {Number} was not fount at {dateTime}", (int)deal.VisitorID, DateTime.UtcNow);
                 return false;
             }
-            if (! CheckOportunityToBuy(deal.Cost, newTeam))
+            if (! CheckOportunityToBuy(deal.Cost, newHotel))
             {
-                _logger.LogError("Deal cost {Number} is more than team balance at {dateTime}", deal.Cost, DateTime.UtcNow);
+                _logger.LogError("Deal cost {Number} is more than hotel balance at {dateTime}", deal.Cost, DateTime.UtcNow);
                 return false;
             }
-            UpdateTeamBalance(lastTeam, newTeam, deal.Cost);
-            UpdatePlayerTeam(player, newTeam.Teamid);
+            UpdateHotelBalance(lastHotel, newHotel, deal.Cost);
+            UpdateVisitorHotel(visitor, newHotel.HotelID);
             dealsRepository.Delete(deal);
             return true;
         }
@@ -65,21 +65,21 @@ namespace ComponentBuisinessLogic
             dealsRepository.Delete(deal);
             return true;
         }
-        public void UpdatePlayerTeam(Player player, int team)
+        public void UpdateVisitorHotel(Visitor visitor, int hotel)
         {
-            player.Teamid = team;
-            playerRepository.Update(player);
+            visitor.HotelID = hotel;
+            visitorRepository.Update(visitor);
         }
-        private void UpdateTeamBalance(Team lastTeam, Team newTeam, int cost)
+        private void UpdateHotelBalance(Hotel lastHotel, Hotel newHotel, int cost)
         {
-            lastTeam.Balance += cost;
-            newTeam.Balance -= cost;
-            teamRepository.Update(lastTeam);
-            teamRepository.Update(newTeam);
+            lastHotel.Cost += cost;
+            newHotel.Cost -= cost;
+            hotelRepository.Update(lastHotel);
+            hotelRepository.Update(newHotel);
         }
-        private bool CheckOportunityToBuy(int cost, Team team)
+        private bool CheckOportunityToBuy(int cost, Hotel hotel)
         {
-            return cost < team.Balance;
+            return cost < hotel.Cost;
         }
         public List<Availabledeal> GetAllDeals()
         {
