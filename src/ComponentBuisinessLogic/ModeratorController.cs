@@ -12,7 +12,16 @@ namespace ComponentBuisinessLogic
     {
         IAvailableDealsRepository dealsRepository;
         IUserInfoRepository userInfoRepository;
-        public ModeratorController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IUserInfoRepository userRep, IAvailableDealsRepository dealsRep, IVisitorRepository visitorRep, IHotelRepository hotelRep, IManagementRepository managementRep, IInterestVisitorsRepository interestVisitorRep, IStatisticsRepository statRep) :
+        public ModeratorController(Userinfo user, 
+                                   ILogger<UserController> logger, 
+                                   IFunctionsRepository funcRep, 
+                                   IUserInfoRepository userRep, 
+                                   IAvailableDealsRepository dealsRep,
+                                   IVisitorRepository visitorRep, 
+                                   IHotelRepository hotelRep, 
+                                   IManagementRepository managementRep, 
+                                   IInterestVisitorsRepository interestVisitorRep,
+                                   IStatisticsRepository statRep) :
             base(user, logger, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep)
         {
             dealsRepository = dealsRep;

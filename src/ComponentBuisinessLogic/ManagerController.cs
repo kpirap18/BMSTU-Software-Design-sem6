@@ -11,29 +11,37 @@ namespace ComponentBuisinessLogic
     public class ManagerController : UserController
     {
         IAvailableDealsRepository dealsRepository;
-        public ManagerController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IAvailableDealsRepository dealsRep, IPlayerRepository playerRep, ITeamRepository teamRep, IManagementRepository managementRep, IDesiredPlayersRepository desiredPlayerRep, IStatisticsRepository statRep) :
-            base(user, logger, funcRep, playerRep, teamRep, managementRep, desiredPlayerRep, statRep)
+        public ManagerController(Userinfo user, 
+                                 ILogger<UserController> logger, 
+                                 IFunctionsRepository funcRep, 
+                                 IAvailableDealsRepository dealsRep, 
+                                 IVisitorRepository visitorRep, 
+                                 IHotelRepository hotelRep, 
+                                 IManagementRepository managementRep,
+                                 IInterestVisitorsRepository interestVisitorRep,
+                                 IStatisticsRepository statRep) :
+            base(user, logger, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep)
         {
             dealsRepository = dealsRep;
         }
-        public List<Desiredplayer> GetAllDesiredPlayers()
+        public List<InterestVisitor> GetAllInterestVisitors()
         {
             Management management = managementRepository.FindByManager(_user.Id);
             if (management != null)
             {
-                return desiredPlayers.GetPlayersByManagement(management);
+                return interestVisitors.GetVisitorsByManagement(management);
             }
             return null;
         }
-        public bool RequestPlayer(int playerID, int cost)
+        public bool RequestVisitor(int visitorID, int cost)
         {
-            Player player = playerRepository.FindPlayerByID(playerID);
-            if (player == null)
+            Visitor visitor = visitorRepository.FindVisitorByID(visitorID);
+            if (visitor == null)
             {
                 return false;
             }
-            Team team = teamRepository.FindTeamByPlayer(player);
-            if (team == null)
+            Hotel hotel = hotelRepository.FindHotelByVisitor(visitor);
+            if (hotel == null)
             {
                 return false;
             }
@@ -42,7 +50,7 @@ namespace ComponentBuisinessLogic
             {
                 return false;
             }
-            Availabledeal deal = new Availabledeal { Playerid = playerID, Tomanagementid = team.Managementid, Frommanagementid = management.Managementid, Cost = cost, Status = (int)Status.NotSeen };
+            Availabledeal deal = new Availabledeal { VisitorID = visitorID, Tomanagementid = hotel.Managementid, Frommanagementid = management.Managementid, Cost = cost, Status = (int)Status.NotSeen };
             dealsRepository.Add(deal);
             return true;
         }
@@ -58,12 +66,12 @@ namespace ComponentBuisinessLogic
             {
                 return false;
             }
-            Team team = teamRepository.FindTeamByManagement((int)management.Managementid);
-            if (team == null)
+            Hotel hotel = hotelRepository.FindHotelByManagement((int)management.Managementid);
+            if (hotel == null)
             {
                 return false;
             }
-            if (deal.Cost > team.Balance)
+            if (deal.Cost > hotel.Cost)
             {
                 return false;
             }
@@ -103,14 +111,14 @@ namespace ComponentBuisinessLogic
             }
             return dealsRepository.GetOutgoaingDeals(management);
         }
-        public bool DeleteDesiredPlayer(int id)
+        public bool DeleteInterestVisitor(int id)
         {
-            Desiredplayer player = desiredPlayers.GetPlayerByID(id);
-            if (player == null)
+            InterestVisitor visitor = interestVisitors.GetVisitorByID(id);
+            if (visitor == null)
             {
                 return false;
             }
-            desiredPlayers.Delete(player);
+            interestVisitors.Delete(visitor);
             return true;
         }
     }

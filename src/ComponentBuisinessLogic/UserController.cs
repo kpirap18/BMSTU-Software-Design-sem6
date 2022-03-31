@@ -18,7 +18,14 @@ namespace ComponentBuisinessLogic
         protected IFunctionsRepository functionsRepository;
         protected Userinfo _user;
         protected ILogger<UserController> _logger;
-        public UserController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IVisitorRepository visitorRep, IHotelRepository hotelRep, IManagementRepository managementRep, IInterestVisitorsRepository interestVisitorRep, IStatisticsRepository statRep)
+        public UserController(Userinfo user, 
+                              ILogger<UserController> logger, 
+                              IFunctionsRepository funcRep, 
+                              IVisitorRepository visitorRep, 
+                              IHotelRepository hotelRep, 
+                              IManagementRepository managementRep, 
+                              IInterestVisitorsRepository interestVisitorRep, 
+                              IStatisticsRepository statRep)
         {
             visitorRepository = visitorRep;
             hotelRepository = hotelRep;

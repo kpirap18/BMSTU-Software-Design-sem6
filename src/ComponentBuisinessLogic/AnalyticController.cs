@@ -10,19 +10,26 @@ namespace ComponentBuisinessLogic
 {
     public class AnalyticController : UserController
     {
-        public AnalyticController(Userinfo user, ILogger<UserController> logger, IFunctionsRepository funcRep, IVisitorRepository visitorRep, IHotelRepository hotelRep, IManagementRepository managementRep, IInterestVisitorsRepository intervisitorRep, IStatisticsRepository statRep) : 
+        public AnalyticController(Userinfo user, 
+                                  ILogger<UserController> logger,
+                                  IFunctionsRepository funcRep, 
+                                  IVisitorRepository visitorRep, 
+                                  IHotelRepository hotelRep, 
+                                  IManagementRepository managementRep, 
+                                  IInterestVisitorsRepository intervisitorRep,
+                                  IStatisticsRepository statRep) : 
             base(user, logger, funcRep, visitorRep, hotelRep, managementRep, intervisitorRep, statRep)
         {
         }
         public List<InterestVisitor> GetAllInterstVisitors()
         {
             Management management = managementRepository.FindByAnalytic(_user.Id);
-            return desiredPlayers.GetPlayersByManagement(management);
+            return interestVisitors.GetVisitorsByManagement(management);
         }
-        public bool AddDesiredPlayer(int playerID)
+        public bool AddInterestVisitor(int visitorID)
         {
-            Player player = playerRepository.FindPlayerByID(playerID);
-            if (player == null)
+            Visitor visitor = visitorRepository.FindVisitorByID(visitorID);
+            if (visitor == null)
             {
                 return false;
             }
@@ -31,18 +38,18 @@ namespace ComponentBuisinessLogic
             {
                 return false;
             }
-            Desiredplayer newDesirePlayer = new Desiredplayer { Managementid = management.Managementid, Playerid = player.Playerid, Teamid = player.Teamid };
-            desiredPlayers.Add(newDesirePlayer);
+            InterestVisitor newDesireVisitor = new InterestVisitor { Managementid = management.Managementid, VisitorID = visitor.VisitorID, HotelID = visitor.HotelID };
+            interestVisitors.Add(newDesireVisitor);
             return true;
         }
-        public bool DeleteDesiredPlayer(int id)
+        public bool DeleteInterestVisitor(int id)
         {
-            Desiredplayer player = desiredPlayers.GetPlayerByID(id);
-            if (player == null)
+            InterestVisitor visitor = interestVisitors.GetVisitorByID(id);
+            if (visitor == null)
             {
                 return false;
             }
-            desiredPlayers.Delete(player);
+            interestVisitors.Delete(visitor);
             return true;
         }
     }

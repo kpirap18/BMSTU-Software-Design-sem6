@@ -1,0 +1,16 @@
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\bin\Debug\net5.0\TestBL.exe
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\bin\Debug\net5.0\TestBL.deps.json
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\bin\Debug\net5.0\TestBL.runtimeconfig.json
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\bin\Debug\net5.0\TestBL.runtimeconfig.dev.json
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\bin\Debug\net5.0\TestBL.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\bin\Debug\net5.0\ref\TestBL.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\bin\Debug\net5.0\TestBL.pdb
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\obj\Debug\net5.0\TestBL.csproj.AssemblyReference.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\obj\Debug\net5.0\TestBL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\obj\Debug\net5.0\TestBL.AssemblyInfoInputs.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\obj\Debug\net5.0\TestBL.AssemblyInfo.cs
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\obj\Debug\net5.0\TestBL.csproj.CoreCompileInputs.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\obj\Debug\net5.0\TestBL.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\obj\Debug\net5.0\ref\TestBL.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\obj\Debug\net5.0\TestBL.pdb
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBL\TestBL\obj\Debug\net5.0\TestBL.genruntimeconfig.cache
