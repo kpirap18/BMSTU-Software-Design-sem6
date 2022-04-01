@@ -43,7 +43,7 @@
 ### Описание типа приложения и выбранного технологического стека (Console App/Desktop/Mobile/Web MPA/ Web SPA/Cross-platform)
 Тип приложения - Desktop
 
-Технологический стек - C#, PostgreSQL
+Технологический стек - C#, PostgreSQL, Windows Form
 
 В качестве СУБД выбор сделан в строну PostgreSQL.
 
