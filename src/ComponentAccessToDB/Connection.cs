@@ -22,17 +22,17 @@ namespace ComponentAccessToDB
             if (perms == (int)Permissions.Guest)
             {
                 //return config["Connections:ConnectAsGuest"];
-                return "Connections:ConnectAsGuest";
+                return "Host=localhost;Port=5432;Database=postgres;Username=guest;Password=1234";
             }
             else if (perms == (int)Permissions.Analytic)
             {
                 //return config["Connections:ConnectAsAnalytic"];
-                return "Connections:ConnectAsAnalytic";
+                return "Host=localhost;Port=5432;Database=postgres;Username=analytic;Password=1234";
             }
             else if (perms == (int)Permissions.Manager)
             {
                 //return config["Connections:ConnectAsManager"];
-                return "Connections:ConnectAsManager";
+                return "Host=localhost;Port=5432;Database=postgres;Username=manager;Password=1234";
             }
             else
             {

@@ -10,19 +10,18 @@ namespace ComponentBuisinessLogic
 {
     public class ModeratorController : UserController
     {
-        IAvailableDealsRepository dealsRepository;
-        IUserInfoRepository userInfoRepository;
+        AvailableDealsRepository dealsRepository;
+        UserInfoRepository userInfoRepository;
         public ModeratorController(Userinfo user, 
-                                   ILogger<UserController> logger, 
-                                   IFunctionsRepository funcRep, 
-                                   IUserInfoRepository userRep, 
-                                   IAvailableDealsRepository dealsRep,
-                                   IVisitorRepository visitorRep, 
-                                   IHotelRepository hotelRep, 
-                                   IManagementRepository managementRep, 
-                                   IInterestVisitorsRepository interestVisitorRep,
-                                   IStatisticsRepository statRep) :
-            base(user, logger, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep)
+                                   FunctionRepository funcRep, 
+                                   UserInfoRepository userRep, 
+                                   AvailableDealsRepository dealsRep,
+                                   VisitorRepository visitorRep, 
+                                   HotelRepository hotelRep, 
+                                   ManagementRepository managementRep, 
+                                   InterestVisitorsRepository interestVisitorRep,
+                                   StatisticsRepository statRep) :
+            base(user, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep)
         {
             dealsRepository = dealsRep;
             userInfoRepository = userRep;
@@ -32,35 +31,35 @@ namespace ComponentBuisinessLogic
             Availabledeal deal = dealsRepository.GetDealByID(dealID);
             if (deal == null)
             {
-                _logger.LogError("Deal {Number} was not fount at {dateTime}", dealID, DateTime.UtcNow);
+                Console.WriteLine("Deal {Number} was not fount at {dateTime}", dealID, DateTime.UtcNow);
                 return false;
             }
             Hotel newHotel = hotelRepository.FindHotelByManagement((int)deal.Frommanagementid);
             if (newHotel == null)
             {
-                _logger.LogError("New hotel was not fount by Tomanagementid {id} at {dateTime}", (int)deal.Tomanagementid, DateTime.UtcNow);
+                Console.WriteLine("New hotel was not fount by Tomanagementid {id} at {dateTime}", (int)deal.Tomanagementid, DateTime.UtcNow);
                 return false;
             }
             Hotel lastHotel = hotelRepository.FindHotelByManagement((int)deal.Tomanagementid);
             if (lastHotel == null)
             {
-                _logger.LogError("Last hotel was not fount by Frommanagementid {id} at {dateTime}", (int)deal.Frommanagementid, DateTime.UtcNow);
+                Console.WriteLine("Last hotel was not fount by Frommanagementid {id} at {dateTime}", (int)deal.Frommanagementid, DateTime.UtcNow);
                 return false;
             }
             Visitor visitor = visitorRepository.FindVisitorByID((int)deal.VisitorID);
             if (visitor == null)
             {
-                _logger.LogError("Visitor {Number} was not fount at {dateTime}", (int)deal.VisitorID, DateTime.UtcNow);
+                Console.WriteLine("Visitor {Number} was not fount at {dateTime}", (int)deal.VisitorID, DateTime.UtcNow);
                 return false;
             }
             if (! CheckOportunityToBuy(deal.Cost, newHotel))
             {
-                _logger.LogError("Deal cost {Number} is more than hotel balance at {dateTime}", deal.Cost, DateTime.UtcNow);
+                Console.WriteLine("Deal cost {Number} is more than hotel balance at {dateTime}", deal.Cost, DateTime.UtcNow);
                 return false;
             }
             UpdateHotelBalance(lastHotel, newHotel, deal.Cost);
             UpdateVisitorHotel(visitor, newHotel.HotelID);
-            dealsRepository.Delete(deal);
+            //dealsRepository.Delete(deal);
             return true;
         }
         public bool DeleteDeal(int dealID)
@@ -68,23 +67,25 @@ namespace ComponentBuisinessLogic
             Availabledeal deal = dealsRepository.GetDealByID(dealID);
             if (deal == null)
             {
-                _logger.LogError("Deal {Number} was not fount at {dateTime}", dealID, DateTime.UtcNow);
+                Console.WriteLine("Deal {Number} was not fount at {dateTime}", dealID, DateTime.UtcNow);
                 return false;
             }
-            dealsRepository.Delete(deal);
+            //dealsRepository.Delete(deal);
             return true;
         }
-        public void UpdateVisitorHotel(Visitor visitor, int hotel)
+        public bool UpdateVisitorHotel(Visitor visitor, int hotel)
         {
             visitor.HotelID = hotel;
             visitorRepository.Update(visitor);
+            return true;
         }
-        private void UpdateHotelBalance(Hotel lastHotel, Hotel newHotel, int cost)
+        private bool UpdateHotelBalance(Hotel lastHotel, Hotel newHotel, int cost)
         {
             lastHotel.Cost += cost;
             newHotel.Cost -= cost;
             hotelRepository.Update(lastHotel);
             hotelRepository.Update(newHotel);
+            return true;
         }
         private bool CheckOportunityToBuy(int cost, Hotel hotel)
         {
@@ -109,7 +110,7 @@ namespace ComponentBuisinessLogic
             Userinfo user = userInfoRepository.FindUserByID(id);
             if (user == null)
             {
-                _logger.LogError("User {id} was not found at {dateTime}", id, DateTime.UtcNow);
+                Console.WriteLine("User {id} was not found at {dateTime}", id, DateTime.UtcNow);
                 return false;
             }
             userInfoRepository.Delete(user);

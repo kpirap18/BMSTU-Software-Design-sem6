@@ -10,17 +10,16 @@ namespace ComponentBuisinessLogic
 {
     public class ManagerController : UserController
     {
-        IAvailableDealsRepository dealsRepository;
+        AvailableDealsRepository dealsRepository;
         public ManagerController(Userinfo user, 
-                                 ILogger<UserController> logger, 
-                                 IFunctionsRepository funcRep, 
-                                 IAvailableDealsRepository dealsRep, 
-                                 IVisitorRepository visitorRep, 
-                                 IHotelRepository hotelRep, 
-                                 IManagementRepository managementRep,
-                                 IInterestVisitorsRepository interestVisitorRep,
-                                 IStatisticsRepository statRep) :
-            base(user, logger, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep)
+                                 FunctionRepository funcRep, 
+                                 AvailableDealsRepository dealsRep, 
+                                 VisitorRepository visitorRep, 
+                                 HotelRepository hotelRep, 
+                                 ManagementRepository managementRep,
+                                 InterestVisitorsRepository interestVisitorRep,
+                                 StatisticsRepository statRep) :
+            base(user, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep)
         {
             dealsRepository = dealsRep;
         }

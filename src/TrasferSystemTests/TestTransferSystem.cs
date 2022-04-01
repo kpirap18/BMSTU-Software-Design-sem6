@@ -282,7 +282,7 @@ namespace TrasferSystemTests
             rep.Delete(checkStat2);
             
             //Assert.IsNull(rep.GetStatisticByID(2), "stat2 was not deleted");
-            if (rep.GetStatisticByID(2) == null)
+            if (rep.GetStatisticByID(300) == null)
             {
                 Console.WriteLine("PASSED stat2 was deleted");
             }
@@ -370,7 +370,7 @@ namespace TrasferSystemTests
             }
 
             //Assert.AreEqual(resDeal.Status, 0, "status is different");
-            if (Equals(resDeal.Status, 0))
+            if (Equals(resDeal.Status, 2))
             {
                 Console.WriteLine("PASSED status is eq");
             }

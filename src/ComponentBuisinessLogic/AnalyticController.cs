@@ -11,14 +11,13 @@ namespace ComponentBuisinessLogic
     public class AnalyticController : UserController
     {
         public AnalyticController(Userinfo user, 
-                                  ILogger<UserController> logger,
-                                  IFunctionsRepository funcRep, 
-                                  IVisitorRepository visitorRep, 
-                                  IHotelRepository hotelRep, 
-                                  IManagementRepository managementRep, 
-                                  IInterestVisitorsRepository intervisitorRep,
-                                  IStatisticsRepository statRep) : 
-            base(user, logger, funcRep, visitorRep, hotelRep, managementRep, intervisitorRep, statRep)
+                                  FunctionRepository funcRep, 
+                                  VisitorRepository visitorRep, 
+                                  HotelRepository hotelRep, 
+                                  ManagementRepository managementRep, 
+                                  InterestVisitorsRepository intervisitorRep,
+                                  StatisticsRepository statRep) : 
+            base(user, funcRep, visitorRep, hotelRep, managementRep, intervisitorRep, statRep)
         {
         }
         public List<InterestVisitor> GetAllInterstVisitors()

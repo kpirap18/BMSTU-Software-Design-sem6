@@ -1,0 +1,16 @@
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\bin\Release\net5.0\appsettings.json
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\bin\Release\net5.0\ComponentBuisinessLogic.deps.json
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\bin\Release\net5.0\ComponentBuisinessLogic.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\bin\Release\net5.0\ref\ComponentBuisinessLogic.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\bin\Release\net5.0\ComponentBuisinessLogic.pdb
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\bin\Release\net5.0\ComponentAccessToDB.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\bin\Release\net5.0\ComponentAccessToDB.pdb
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\obj\Release\net5.0\ComponentBuisinessLogic.csproj.AssemblyReference.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\obj\Release\net5.0\ComponentBuisinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\obj\Release\net5.0\ComponentBuisinessLogic.AssemblyInfoInputs.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\obj\Release\net5.0\ComponentBuisinessLogic.AssemblyInfo.cs
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\obj\Release\net5.0\ComponentBuisinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\obj\Release\net5.0\ComponentBuisinessLogic.csproj.CopyComplete
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\obj\Release\net5.0\ComponentBuisinessLogic.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\obj\Release\net5.0\ref\ComponentBuisinessLogic.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentBuisinessLogic\obj\Release\net5.0\ComponentBuisinessLogic.pdb

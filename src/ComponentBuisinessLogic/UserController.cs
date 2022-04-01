@@ -10,22 +10,20 @@ namespace ComponentBuisinessLogic
 {
     public class UserController
     {
-        protected IVisitorRepository visitorRepository;
-        protected IHotelRepository hotelRepository;
-        protected IInterestVisitorsRepository interestVisitors;
-        protected IStatisticsRepository statisticsRepository;
-        protected IManagementRepository managementRepository;
-        protected IFunctionsRepository functionsRepository;
+        protected VisitorRepository visitorRepository;
+        protected HotelRepository hotelRepository;
+        protected InterestVisitorsRepository interestVisitors;
+        protected StatisticsRepository statisticsRepository;
+        protected ManagementRepository managementRepository;
+        protected FunctionRepository functionsRepository;
         protected Userinfo _user;
-        protected ILogger<UserController> _logger;
-        public UserController(Userinfo user, 
-                              ILogger<UserController> logger, 
-                              IFunctionsRepository funcRep, 
-                              IVisitorRepository visitorRep, 
-                              IHotelRepository hotelRep, 
-                              IManagementRepository managementRep, 
-                              IInterestVisitorsRepository interestVisitorRep, 
-                              IStatisticsRepository statRep)
+        public UserController(Userinfo user,  
+                              FunctionRepository funcRep, 
+                              VisitorRepository visitorRep, 
+                              HotelRepository hotelRep, 
+                              ManagementRepository managementRep, 
+                              InterestVisitorsRepository interestVisitorRep, 
+                              StatisticsRepository statRep)
         {
             visitorRepository = visitorRep;
             hotelRepository = hotelRep;
@@ -34,7 +32,6 @@ namespace ComponentBuisinessLogic
             managementRepository = managementRep;
             functionsRepository = funcRep;
             _user = user;
-            _logger = logger;
         }
         public List<Visitor> GetAllVisitors()
         {

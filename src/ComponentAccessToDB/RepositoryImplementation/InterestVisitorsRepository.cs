@@ -75,8 +75,8 @@ namespace ComponentAccessToDB
 
         public List<InterestVisitor> GetVisitorsByManagement(Management element)
         {
-            IQueryable<InterestVisitor> visitors = db.InterestVisitors.Where(needed =>
-                needed.Managementid == element.Managementid
+            IQueryable<InterestVisitor> visitors = db.InterestVisitors.Where(n =>
+                n.Managementid == element.Managementid
             );
             return visitors.Count() > 0 ? visitors.ToList() : null;
         }
