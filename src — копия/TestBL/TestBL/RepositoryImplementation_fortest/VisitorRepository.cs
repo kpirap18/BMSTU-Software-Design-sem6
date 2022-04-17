@@ -15,7 +15,7 @@ namespace TestBL
         {
             return;
         }
-        public List<Visitor> GetAll()
+        public List<Visitor> GetLimit(int limit)
         {
             List<Visitor> a = new List<Visitor>();
             return a;

@@ -22,14 +22,10 @@ namespace ComponentAccessToDB
         {
             try
             {
-                //element = new InterestVisitor(id: db.InterestVisitors.Count() + 1, hid: element.HotelID,
-                //                        vid: element.VisitorID, mid: element.Managementid);
-                
                 InterestVisitorDB iv = InterestVisitorConv.BltoDB(element);
                 iv.Id = db.InterestVisitors.Count() + 1;
                 db.InterestVisitors.Add(iv);
                 db.SaveChanges();
-                //Console.WriteLine("Desired visitor {Number} added at {dateTime}", element.VisitorID, DateTime.UtcNow);
                 // _logger.LogInformation("Desired visitor {Number} added at {dateTime}", element.VisitorID, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -38,9 +34,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<InterestVisitor> GetAll()
+        public List<InterestVisitor> GetLimit(int limit)
         {
-            IQueryable<InterestVisitorDB> visitors = db.InterestVisitors;
+            IQueryable<InterestVisitorDB> visitors = db.InterestVisitors.OrderBy(z => z.Id).Where(z => z.Id < limit);
             List<InterestVisitorDB> conv = visitors.ToList();
             List<InterestVisitor> final = new List<InterestVisitor>();
             foreach (var m in conv)
@@ -56,7 +52,6 @@ namespace ComponentAccessToDB
                 InterestVisitorDB iv = InterestVisitorConv.BltoDB(element);
                 db.InterestVisitors.Update(iv);
                 db.SaveChanges();
-                //Console.WriteLine("Desired visitor {Number} updated at {dateTime}", element.VisitorID, DateTime.UtcNow);
                 // _logger.LogInformation("Desired visitor {Number} updated at {dateTime}", element.VisitorID, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -72,7 +67,6 @@ namespace ComponentAccessToDB
                 InterestVisitorDB iv = InterestVisitorConv.BltoDB(element);
                 db.InterestVisitors.Remove(iv);
                 db.SaveChanges();
-                //Console.WriteLine("Desired visitor {Number} deleted at {dateTime}", element.VisitorID, DateTime.UtcNow);
                 // _logger.LogInformation("Desired visitor {Number} deleted at {dateTime}", element.VisitorID, DateTime.UtcNow);
             }
             catch (Exception ex)

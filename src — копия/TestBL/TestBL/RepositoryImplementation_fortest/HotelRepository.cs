@@ -15,7 +15,7 @@ namespace TestBL
         {
             return;
         }
-        public List<Hotel> GetAll()
+        public List<Hotel> GetLimit(int limit)
         {
             List<Hotel> a = new List<Hotel>();
             return a;

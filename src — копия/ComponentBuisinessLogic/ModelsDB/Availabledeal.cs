@@ -23,9 +23,5 @@ namespace ComponentBuisinessLogic
         public int Frommanagementid { get;  }
         public int Cost { get;  }
         public int Status { get;  }
-
-        //public virtual Management Frommanagement { get;  }
-        //public virtual Visitor Visitor { get;  }
-        //public virtual Management Tomanagement { get;  }
     }
 }

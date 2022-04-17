@@ -10,7 +10,7 @@ using ComponentBuisinessLogic;
 namespace ComponentAccessToDB
 {
     [Keyless]
-    public class VisitorHotelStatDB // PlayersTeamStat
+    public class VisitorHotelStatDB 
     {
         public int visitorid { get; set; }
         public string visitor { get; set; }

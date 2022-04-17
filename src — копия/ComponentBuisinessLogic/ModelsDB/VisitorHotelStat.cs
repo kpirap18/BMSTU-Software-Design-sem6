@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ComponentBuisinessLogic
 {
     [Keyless]
-    public class VisitorHotelStat // PlayersTeamStat
+    public class VisitorHotelStat 
     {
         public VisitorHotelStat(int vid = 1, string v = "v", string h = "h", int s = 1)
         {

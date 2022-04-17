@@ -30,12 +30,10 @@ namespace ComponentAccessToDB
         {
             try
             {
-                //element = new Availabledeal(id: db.Availabledeals.Count() + 1);
                 AvailabledealDB a = AvailabledealConv.BltoDB(element);
                 a.Id = db.Availabledeals.Count() + 1;
                 db.Availabledeals.Add(a);
                 db.SaveChanges();
-                // Console.WriteLine("Deal");
                 //_logger.LogInformation("Deal {Number} added at {dateTime}", element.Id, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -44,9 +42,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<Availabledeal> GetAll()
+        public List<Availabledeal> GetLimit(int limit)
         {
-            IQueryable<AvailabledealDB> deals = db.Availabledeals;
+            IQueryable<AvailabledealDB> deals = db.Availabledeals.OrderBy(z => z.Id).Where(z => z.Id < limit);
             List<AvailabledealDB> conv = deals.ToList();
             List<Availabledeal> final = new List<Availabledeal>();
             foreach (var m in conv)
@@ -62,7 +60,6 @@ namespace ComponentAccessToDB
                 AvailabledealDB a = AvailabledealConv.BltoDB(element);
                 db.Availabledeals.Update(a);
                 db.SaveChanges();
-                // Console.WriteLine("Deal {Number} updated at {dateTime}", element.Id, DateTime.UtcNow);
                 //_logger.LogInformation("Deal {Number} updated at {dateTime}", element.Id, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -78,7 +75,6 @@ namespace ComponentAccessToDB
                 AvailabledealDB a = AvailabledealConv.BltoDB(element);
                 db.Availabledeals.Remove(a);
                 db.SaveChanges();
-                // Console.WriteLine("Deal {Number} removed at {dateTime}", element.Id, DateTime.UtcNow);
                 //_logger.LogInformation("Deal {Number} removed at {dateTime}", element.Id, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -96,14 +92,10 @@ namespace ComponentAccessToDB
         {
             try
             {
-                //element = new Availabledeal(id: element.Id, vid: element.VisitorID,
-                //                   tid: element.Tomanagementid, fid: element.Frommanagementid,
-                //                 cost: element.Cost, s: (int)Status.Confirmed);
                 AvailabledealDB a = AvailabledealConv.BltoDB(element);
                 a.Status = (int)Status.Confirmed;
                 db.Availabledeals.Update(a);
                 db.SaveChanges();
-                // Console.WriteLine("Deal {Number} confirmed at {dateTime}", element.Id, DateTime.UtcNow);
                 //_logger.LogInformation("Deal {Number} confirmed at {dateTime}", element.Id, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -116,14 +108,10 @@ namespace ComponentAccessToDB
         {
             try
             {
-                //element = new Availabledeal(id: element.Id, vid: element.VisitorID,
-                //                   tid: element.Tomanagementid, fid: element.Frommanagementid,
-                //                 cost: element.Cost, s: (int)Status.Rejected);
                 AvailabledealDB a = AvailabledealConv.BltoDB(element);
                 a.Status = (int)Status.Rejected;
                 db.Availabledeals.Update(a);
                 db.SaveChanges();
-                // Console.WriteLine("Deal {Number} rejected at {dateTime}", element.Id, DateTime.UtcNow);
                 //_logger.LogInformation("Deal {Number} rejected at {dateTime}", element.Id, DateTime.UtcNow);
             }
             catch (Exception ex)

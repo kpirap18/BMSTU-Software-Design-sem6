@@ -15,7 +15,7 @@ namespace TestBL
         {
             return;
         }
-        public List<Statistic> GetAll()
+        public List<Statistic> GetLimit(int limit)
         {
             List<Statistic> a = new List<Statistic>();
             return a;

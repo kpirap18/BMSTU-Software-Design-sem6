@@ -41,7 +41,7 @@ namespace TrasferSystemTests
 //            Assert.IsNull(rep.FindUserByID(checkUser2.Id), "user2 was not deleted");
             
 
-            List<Userinfo> users = rep.GetAll();
+            List<Userinfo> users = rep.GetLimit(100);
 
             Assert.IsNotNull(users, "Can't find userinfos");
 
@@ -70,7 +70,7 @@ namespace TrasferSystemTests
             //Assert.IsNull(rep.FindHotelByID(checkhotel2.HotelID), "hotel2 was not deleted");
 
 
-            List<Hotel> hotels = rep.GetAll();
+            List<Hotel> hotels = rep.GetLimit(100);
             Assert.IsNotNull(hotels, "Can't find hotels");
 
             Visitor visitor = new Visitor(vid:1, hid:1, s:1, name:"Denis", age:20, country:"Russia", b:2000);
@@ -102,7 +102,7 @@ namespace TrasferSystemTests
 //            Assert.IsNull(rep.FindVisitorByID(visitorID), "visitor2 was not deleted");
 
 
-            List<Visitor> visitors = rep.GetAll();
+            List<Visitor> visitors = rep.GetLimit(100);
             Assert.IsNotNull(visitors, "Can't find hotels");
 
 
@@ -139,7 +139,7 @@ namespace TrasferSystemTests
             Assert.IsNotNull(rep.GetStatisticByID(2), "stat2 was not deleted");
 
 
-            List<Statistic> stats = rep.GetAll();
+            List<Statistic> stats = rep.GetLimit(100);
             Assert.IsNotNull(stats, "Can't find stats");
 
 
@@ -160,7 +160,7 @@ namespace TrasferSystemTests
             //deal.Cost = 2500;
             rep.Update(deal);
             
-            List<Availabledeal> deals = rep.GetAll();
+            List<Availabledeal> deals = rep.GetLimit(100);
             Assert.IsNotNull(deals, "can't find deals");
 
 
@@ -195,7 +195,7 @@ namespace TrasferSystemTests
             //visitor.Managementid = 2;
             rep.Update(visitor);
 
-            List<InterestVisitor> visitors = rep.GetAll();
+            List<InterestVisitor> visitors = rep.GetLimit(100);
             Assert.IsNotNull(visitors, "Can't find visitors");
 
 

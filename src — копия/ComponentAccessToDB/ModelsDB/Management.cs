@@ -27,9 +27,7 @@ namespace ComponentAccessToDB
             {
                 Managementid = a_bl.Managementid,
                 Analysistid = a_bl.Analysistid,
-                Managerid = a_bl.Managerid,
-                //Manager = UserinfoConv.BltoDB(a_bl.Manager),
-                //Analysist = UserinfoConv.BltoDB(a_bl.Analysist)
+                Managerid = a_bl.Managerid
             };
         }
         public static Management DBtoBL(ManagementDB a_bl)

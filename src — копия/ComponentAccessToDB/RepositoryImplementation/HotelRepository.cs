@@ -23,17 +23,11 @@ namespace ComponentAccessToDB
         {
             try
             {
-                //element = new Hotel(hid: db.Hotels.Count() + 1,
-                //                   mid: element.Managementid,
-                //                 name: element.Name,
-                //               country: element.Country,
-                //             cost: element.Cost);
                 HotelDB h = HotelConv.BltoDB(element);
                 h.HotelID = db.Hotels.Count() + 1;
 
                 db.Hotels.Add(h);
                 db.SaveChanges();
-                //Console.WriteLine("Hotel {Name} added at {dateTime}", element.Name, DateTime.UtcNow);
                 //_logger.LogInformation("Hotel {Name} added at {dateTime}", element.Name, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -42,9 +36,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<Hotel> GetAll()
+        public List<Hotel> GetLimit(int limit)
         {
-            IQueryable<HotelDB> Hotels = db.Hotels;
+            IQueryable<HotelDB> Hotels = db.Hotels.OrderBy(z => z.HotelID).Where(z => z.HotelID < limit);
             List<HotelDB> conv = Hotels.ToList();
             List<Hotel> final = new List<Hotel>();
             foreach (var m in conv)
@@ -60,7 +54,6 @@ namespace ComponentAccessToDB
                 HotelDB h = HotelConv.BltoDB(element);
                 db.Hotels.Update(h);
                 db.SaveChanges();
-                //Console.WriteLine("Hotel {Name} updated at {dateTime}", element.Name, DateTime.UtcNow);
                 // _logger.LogInformation("Hotel {Name} updated at {dateTime}", element.Name, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -76,7 +69,6 @@ namespace ComponentAccessToDB
                 HotelDB h = HotelConv.BltoDB(element);
                 db.Hotels.Remove(h);
                 db.SaveChanges();
-                //Console.WriteLine("Hotel {Name} removed at {dateTime}", element.Name, DateTime.UtcNow);
                 // _logger.LogInformation("Hotel {Name} removed at {dateTime}", element.Name, DateTime.UtcNow);
             }
             catch (Exception ex)

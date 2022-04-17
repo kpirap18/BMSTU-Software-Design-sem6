@@ -5,7 +5,7 @@ using ComponentBuisinessLogic;
 
 namespace ComponentAccessToDB
 {
-    public partial class VisitorDB // Player
+    public partial class VisitorDB 
     {
         public int VisitorID { get; set; }
         public int HotelID { get; set; }
@@ -33,9 +33,7 @@ namespace ComponentAccessToDB
                 Name = a_bl.Name,
                 Age = a_bl.Age,
                 Country = a_bl.Country,
-                Budget = a_bl.Budget,
-                //StatisticsNavigation = StatisticConv.BltoDB(a_bl.StatisticsNavigation),
-                //Hotel = HotelConv.BltoDB(a_bl.Hotel)
+                Budget = a_bl.Budget
             };
         }
 

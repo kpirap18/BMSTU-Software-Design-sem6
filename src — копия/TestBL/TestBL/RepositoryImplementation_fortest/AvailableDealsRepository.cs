@@ -15,7 +15,7 @@ namespace TestBL
         {
             return;
         }
-        public List<Availabledeal> GetAll()
+        public List<Availabledeal> GetLimit(int limit)
         {
             List<Availabledeal> a = new List<Availabledeal>();
             return a;

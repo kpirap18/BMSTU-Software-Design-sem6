@@ -19,9 +19,5 @@ namespace ComponentBuisinessLogic
         public int VisitorID { get;  }
         public int HotelID { get;  }
         public int Managementid { get;  }
-
-        //public virtual Management Management { get;  }
-        //public virtual Visitor Visitor { get;  }
-        //public virtual Hotel Hotel { get;  }
     }
 }

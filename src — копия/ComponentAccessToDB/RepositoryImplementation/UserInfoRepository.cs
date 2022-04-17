@@ -23,9 +23,9 @@ namespace ComponentAccessToDB
             db.Userinfos.Add(v);
             db.SaveChanges();
         }
-        public List<Userinfo> GetAll()
+        public List<Userinfo> GetLimit(int limit)
         {
-            IQueryable<UserinfoDB> users = db.Userinfos;
+            IQueryable<UserinfoDB> users = db.Userinfos.OrderBy(z => z.Id).Where(z => z.Id < limit);
             List<UserinfoDB> conv = users.ToList();
             List<Userinfo> final = new List<Userinfo>();
             foreach (var m in conv)

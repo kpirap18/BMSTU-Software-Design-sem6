@@ -16,8 +16,6 @@ namespace ComponentBuisinessLogic
             Age = age;
             Country = country;
             Budget = b;
-            //Availabledeals = new HashSet<Availabledeal>();
-            //InterestVisitors = new HashSet<InterestVisitor>();
         }
 
         public int VisitorID { get;  }
@@ -27,10 +25,5 @@ namespace ComponentBuisinessLogic
         public int Age { get;  }
         public string Country { get;  }
         public int Budget { get;  }
-
-        //public virtual Statistic StatisticsNavigation { get;  }
-        //public virtual Hotel Hotel { get;  }
-        //public virtual ICollection<Availabledeal> Availabledeals { get;  }
-        //public virtual ICollection<InterestVisitor> InterestVisitors { get;  }
     }
 }

@@ -5,7 +5,7 @@ using ComponentBuisinessLogic;
 
 namespace ComponentAccessToDB
 {
-    public partial class HotelDB // Team
+    public partial class HotelDB 
     {
         public int HotelID { get; set; }
         public int Managementid { get; set; }

@@ -14,7 +14,7 @@ namespace TestBL
         {
             return;
         }
-        public List<Userinfo> GetAll()
+        public List<Userinfo> GetLimit(int limit)
         {
             List<Userinfo> a = new List<Userinfo>();
             return a;

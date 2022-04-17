@@ -12,13 +12,10 @@ namespace ComponentBuisinessLogic
             Statisticsid = sid;
             NumberOfTrips = number;
             AverageRating = ar;
-            //Visitors = new HashSet<Visitor>();
         }
 
         public int Statisticsid { get;  }
         public int NumberOfTrips { get;  }
         public int AverageRating { get;  }
-
-        //public virtual ICollection<Visitor> Visitors { get;  }
     }
 }

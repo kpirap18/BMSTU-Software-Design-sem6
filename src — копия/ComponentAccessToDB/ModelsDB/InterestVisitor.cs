@@ -5,7 +5,7 @@ using ComponentBuisinessLogic;
 
 namespace ComponentAccessToDB
 {
-    public partial class InterestVisitorDB // Desiredplayer
+    public partial class InterestVisitorDB 
     {
         public int Id { get; set; }
         public int VisitorID { get; set; }
@@ -26,10 +26,7 @@ namespace ComponentAccessToDB
                 Id = a_bl.Id,
                 VisitorID = a_bl.VisitorID,
                 HotelID = a_bl.HotelID,
-                Managementid = a_bl.Managementid,
-                //Management = ManagementConv.BltoDB(a_bl.Management),
-                //Visitor = VisitorConv.BltoDB(a_bl.Visitor),
-                //Hotel = HotelConv.BltoDB(a_bl.Hotel)
+                Managementid = a_bl.Managementid
             };
         }
 

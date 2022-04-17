@@ -109,7 +109,7 @@ namespace ComponentBuisinessLogic
         }
         public List<Availabledeal> GetAllDeals()
         {
-            return dealsRepository.GetAll();
+            return dealsRepository.GetLimit(100);
         }
         public bool AddNewUser(string login, string hash, int perms)
         {
@@ -134,7 +134,7 @@ namespace ComponentBuisinessLogic
         }
         public List<Userinfo> GetAllUsers()
         {
-            return userInfoRepository.GetAll();
+            return userInfoRepository.GetLimit(100);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace TestBL
         {
             return;
         }
-        public List<Management> GetAll()
+        public List<Management> GetLimit(int limit)
         {
             List<Management> a = new List<Management>();
             return a;

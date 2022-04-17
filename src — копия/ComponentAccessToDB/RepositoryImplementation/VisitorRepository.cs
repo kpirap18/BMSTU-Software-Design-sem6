@@ -27,7 +27,6 @@ namespace ComponentAccessToDB
                 v.VisitorID = db.Visitors.Count() + 1;
                 db.Visitors.Add(v);
                 db.SaveChanges();
-                //Console.WriteLine("Visitor {Name} added at {dateTime}", element.Name, DateTime.UtcNow);
                 // _logger.LogInformation("Visitor {Name} added at {dateTime}", element.Name, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -36,9 +35,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<Visitor> GetAll()
+        public List<Visitor> GetLimit(int limit)
         {
-            IQueryable<VisitorDB> visitors = db.Visitors;
+            IQueryable<VisitorDB> visitors = db.Visitors.OrderBy(z => z.VisitorID).Where(z => z.VisitorID < limit);
             List<VisitorDB> conv = visitors.ToList();
             List<Visitor> final = new List<Visitor>();
             foreach (var m in conv)
@@ -54,7 +53,6 @@ namespace ComponentAccessToDB
                 VisitorDB v = VisitorConv.BltoDB(element);
                 db.Visitors.Update(v);
                 db.SaveChanges();
-                //Console.WriteLine("Visitor {Name} updated at {dateTime}", element.Name, DateTime.UtcNow);
                 // _logger.LogInformation("Visitor {Name} updated at {dateTime}", element.Name, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -70,7 +68,6 @@ namespace ComponentAccessToDB
                 VisitorDB v = VisitorConv.BltoDB(element);
                 db.Visitors.Remove(v);
                 db.SaveChanges();
-                //Console.WriteLine("Visitor {Name} removed at {dateTime}", element.Name, DateTime.UtcNow);
                 // _logger.LogInformation("Visitor {Name} removed at {dateTime}", element.Name, DateTime.UtcNow);
             }
             catch (Exception ex)

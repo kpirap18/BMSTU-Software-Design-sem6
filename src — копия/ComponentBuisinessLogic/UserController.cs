@@ -33,7 +33,7 @@ namespace ComponentBuisinessLogic
         }
         public List<Visitor> GetAllVisitors()
         {
-            return visitorRepository.GetAll();
+            return visitorRepository.GetLimit(100);
         }
         public List<VisitorHotelStat> GetVisitorHotelStat()
         {
@@ -54,7 +54,7 @@ namespace ComponentBuisinessLogic
         }
         public List<Hotel> GetAllHotels()
         {
-            return hotelRepository.GetAll();
+            return hotelRepository.GetLimit(100);
         }
         public Hotel FindHotelByID(int id)
         {

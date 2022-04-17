@@ -9,7 +9,7 @@ namespace ComponentBuisinessLogic
     public interface CrudRepository<T>
     {
         void Add(T element);
-        List<T> GetAll();
+        List<T> GetLimit(int limit);
         void Update(T element);
         void Delete(T element);
     }

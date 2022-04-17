@@ -23,14 +23,10 @@ namespace ComponentAccessToDB
         {
             try
             {
-                //element = new Management(mid: db.Managements.Count() + 1,
-                //                       aid: element.Analysistid, 
-                //                     mmid: element.Managerid);
                 ManagementDB e = ManagementConv.BltoDB(element);
                 e.Managementid = db.Managements.Count() + 1;
                 db.Managements.Add(e);
                 db.SaveChanges();
-                //Console.WriteLine("Management {Number} added at {dateTime}", element.Managementid, DateTime.UtcNow);
                 // _logger.LogInformation("Management {Number} added at {dateTime}", element.Managementid, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -39,9 +35,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<Management> GetAll()
+        public List<Management> GetLimit(int limit)
         {
-            IQueryable<ManagementDB> managament = db.Managements;
+            IQueryable<ManagementDB> managament = db.Managements.OrderBy(z => z.Managementid).Where(z => z.Managementid < limit);
             List<ManagementDB> conv = managament.ToList();
             List<Management> final = new List<Management>();
             foreach (var m in conv)
@@ -57,7 +53,6 @@ namespace ComponentAccessToDB
                 ManagementDB e = ManagementConv.BltoDB(element);
                 db.Managements.Update(e);
                 db.SaveChanges();
-                //Console.WriteLine("Management {Number} updated at {dateTime}", element.Managementid, DateTime.UtcNow);
                 // _logger.LogInformation("Management {Number} updated at {dateTime}", element.Managementid, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -73,7 +68,6 @@ namespace ComponentAccessToDB
                 ManagementDB e = ManagementConv.BltoDB(element);
                 db.Managements.Remove(e);
                 db.SaveChanges();
-                //Console.WriteLine("Management {Number} deleted at {dateTime}", element.Managementid, DateTime.UtcNow);
                 // _logger.LogInformation("Management {Number} deleted at {dateTime}", element.Managementid, DateTime.UtcNow);
             }
             catch (Exception ex)

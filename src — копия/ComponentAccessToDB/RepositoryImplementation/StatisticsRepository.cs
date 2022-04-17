@@ -27,7 +27,6 @@ namespace ComponentAccessToDB
                 st.Statisticsid = db.Statistics.Count() + 1;
                 db.Statistics.Add(st);
                 db.SaveChanges();
-                //Console.WriteLine("Statistics {Number} added at {dateTime}", element.Statisticsid, DateTime.UtcNow);
                 // _logger.LogInformation("Statistics {Number} added at {dateTime}", element.Statisticsid, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -36,9 +35,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<Statistic> GetAll()
+        public List<Statistic> GetLimit(int limit)
         {
-            IQueryable<StatisticDB> stats = db.Statistics;
+            IQueryable<StatisticDB> stats = db.Statistics.OrderBy(z => z.Statisticsid).Where(z => z.Statisticsid < limit);
             List<StatisticDB> conv = stats.ToList();
             List<Statistic> final = new List<Statistic>();
             foreach (var m in conv)
@@ -54,7 +53,6 @@ namespace ComponentAccessToDB
                 StatisticDB st = StatisticConv.BltoDB(element);
                 db.Statistics.Update(st);
                 db.SaveChanges();
-                //Console.WriteLine("Statistics {Number} updated at {dateTime}", element.Statisticsid, DateTime.UtcNow);
                 // _logger.LogInformation("Statistics {Number} updated at {dateTime}", element.Statisticsid, DateTime.UtcNow);
             }
             catch (Exception ex)
@@ -70,7 +68,6 @@ namespace ComponentAccessToDB
                 StatisticDB st = StatisticConv.BltoDB(element);
                 db.Statistics.Remove(st);
                 db.SaveChanges();
-                //Console.WriteLine("Statistics {Number} removed at {dateTime}", element.Statisticsid, DateTime.UtcNow);
                 // _logger.LogInformation("Statistics {Number} removed at {dateTime}", element.Statisticsid, DateTime.UtcNow);
             }
             catch (Exception ex)

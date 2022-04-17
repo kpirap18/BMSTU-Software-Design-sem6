@@ -14,8 +14,6 @@ namespace ComponentBuisinessLogic
             Name = name;
             Country = country;
             Cost = cost;
-            //InterestVisitors = new HashSet<InterestVisitor>();
-            //Visitors = new HashSet<Visitor>();
         }
 
         public int HotelID { get;  }
@@ -23,9 +21,5 @@ namespace ComponentBuisinessLogic
         public string Name { get;  }
         public string Country { get;  }
         public int Cost { get;  }
-
-        public virtual Management Management { get;  }
-        //public virtual ICollection<InterestVisitor> InterestVisitors { get;  }
-        //public virtual ICollection<Visitor> Visitors { get;  }
     }
 }

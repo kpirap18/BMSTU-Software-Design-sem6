@@ -13,16 +13,11 @@ namespace ComponentBuisinessLogic
             Login = login;
             Hash = hash;
             Permission = per;
-            //ManagementAnalysists = new HashSet<Management>();
-            //ManagementManagers = new HashSet<Management>();
         }
 
         public int Id { get;  }
         public string Login { get;  }
         public string Hash { get;  }
         public int Permission { get;  }
-
-        //public virtual ICollection<Management> ManagementAnalysists { get;  }
-        //public virtual ICollection<Management> ManagementManagers { get;  }
     }
 }
