@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ComponentBuisinessLogic;
+
 
 namespace ComponentAccessToDB
 {
@@ -16,13 +18,17 @@ namespace ComponentAccessToDB
         }
         public void Add(Userinfo element)
         {
+            //element = new Userinfo(id: db.Userinfos.Count() + 1,
+              //                     login: element.Login,
+                //                   hash: element.Hash,
+                  //                 per: element.Permission);
             element.Id = db.Userinfos.Count() + 1;
             db.Userinfos.Add(element);
             db.SaveChanges();
         }
-        public List<Userinfo> GetAll()
+        public List<Userinfo> GetLimit(int limit)
         {
-            IQueryable<Userinfo> users = db.Userinfos;
+            IQueryable<Userinfo> users = db.Userinfos.OrderBy(z => z.Id).Where(z => z.Id < limit);
             return users.Count() > 0 ? users.ToList() : null;
         }
         public void Update(Userinfo element)

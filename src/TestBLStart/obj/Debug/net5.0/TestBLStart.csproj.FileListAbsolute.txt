@@ -13,7 +13,6 @@ C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Deb
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\testhost.exe
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\TestBL.exe
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\TestBLStart.exe
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\appsettings.json
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\TestBLStart.deps.json
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\TestBLStart.runtimeconfig.json
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\TestBLStart.runtimeconfig.dev.json
@@ -26,15 +25,9 @@ C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Deb
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.Configuration.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.Configuration.FileExtensions.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Json.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Physical.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.Logging.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
@@ -53,9 +46,6 @@ C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Deb
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\NuGet.Frameworks.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Serilog.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Serilog.Extensions.Logging.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Serilog.Sinks.Console.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\Serilog.Sinks.File.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
@@ -122,11 +112,9 @@ C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Deb
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\ComponentAccessToDB.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\ComponentBuisinessLogic.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\TestBL.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\TestBL.pdb
-C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\ComponentAccessToDB.pdb
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\bin\Debug\net5.0\ComponentBuisinessLogic.pdb
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\obj\Debug\net5.0\TestBLStart.csproj.CopyComplete
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestBLStart\obj\Debug\net5.0\TestBLStart.dll

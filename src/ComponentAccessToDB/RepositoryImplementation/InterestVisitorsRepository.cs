@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ComponentBuisinessLogic;
 
 namespace ComponentAccessToDB
 {
@@ -21,6 +22,8 @@ namespace ComponentAccessToDB
         {
             try
             {
+                //element = new InterestVisitor(id: db.InterestVisitors.Count() + 1, hid: element.HotelID,
+                  //                        vid: element.VisitorID, mid: element.Managementid);
                 element.Id = db.InterestVisitors.Count() + 1;
                 db.InterestVisitors.Add(element);
                 db.SaveChanges();
@@ -33,9 +36,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<InterestVisitor> GetAll()
+        public List<InterestVisitor> GetLimit(int limit)
         {
-            IQueryable<InterestVisitor> visitors = db.InterestVisitors;
+            IQueryable<InterestVisitor> visitors = db.InterestVisitors.OrderBy(z => z.Id).Where(z => z.Id < limit);
             return visitors.Count() > 0 ? visitors.ToList() : null;
         }
         public void Update(InterestVisitor element)

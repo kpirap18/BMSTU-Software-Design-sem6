@@ -1,0 +1,5 @@
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\obj\Release\net5.0\TrasferSystemTests.csproj.AssemblyReference.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\obj\Release\net5.0\TrasferSystemTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\obj\Release\net5.0\TrasferSystemTests.AssemblyInfoInputs.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\obj\Release\net5.0\TrasferSystemTests.AssemblyInfo.cs
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\obj\Release\net5.0\TrasferSystemTests.csproj.CoreCompileInputs.cache

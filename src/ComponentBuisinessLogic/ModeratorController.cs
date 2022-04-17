@@ -3,24 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ComponentAccessToDB;
-using Microsoft.Extensions.Logging;
 
 namespace ComponentBuisinessLogic
 {
     public class ModeratorController : UserController
     {
-        AvailableDealsRepository dealsRepository;
-        UserInfoRepository userInfoRepository;
+        IAvailableDealsRepository dealsRepository;
+        IUserInfoRepository userInfoRepository;
         public ModeratorController(Userinfo user, 
-                                   FunctionRepository funcRep, 
-                                   UserInfoRepository userRep, 
-                                   AvailableDealsRepository dealsRep,
-                                   VisitorRepository visitorRep, 
-                                   HotelRepository hotelRep, 
-                                   ManagementRepository managementRep, 
-                                   InterestVisitorsRepository interestVisitorRep,
-                                   StatisticsRepository statRep) :
+                                   IFunctionsRepository funcRep, 
+                                   IUserInfoRepository userRep, 
+                                   IAvailableDealsRepository dealsRep,
+                                   IVisitorRepository visitorRep, 
+                                   IHotelRepository hotelRep, 
+                                   IManagementRepository managementRep, 
+                                   IInterestVisitorsRepository interestVisitorRep,
+                                   IStatisticsRepository statRep) :
             base(user, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep)
         {
             dealsRepository = dealsRep;
@@ -49,12 +47,12 @@ namespace ComponentBuisinessLogic
             Visitor visitor = visitorRepository.FindVisitorByID((int)deal.VisitorID);
             if (visitor == null)
             {
-                Console.WriteLine("Visitor {Number} was not fount at {dateTime}", (int)deal.VisitorID, DateTime.UtcNow);
+                Console.WriteLine("Visitor {0} was not fount at {1}", (int)deal.VisitorID, DateTime.UtcNow);
                 return false;
             }
             if (! CheckOportunityToBuy(deal.Cost, newHotel))
             {
-                Console.WriteLine("Deal cost {Number} is more than hotel balance at {dateTime}", deal.Cost, DateTime.UtcNow);
+                Console.WriteLine("Deal cost {0} is more than hotel balance at {1}", deal.Cost, DateTime.UtcNow);
                 return false;
             }
             UpdateHotelBalance(lastHotel, newHotel, deal.Cost);
@@ -75,12 +73,30 @@ namespace ComponentBuisinessLogic
         }
         public bool UpdateVisitorHotel(Visitor visitor, int hotel)
         {
+            //visitor = new Visitor(vid: visitor.VisitorID,
+              //                    hid: hotel,
+                //                  s: visitor.Statistics,
+                  //                name: visitor.Name,
+                    //              age: visitor.Age,
+                      //            country: visitor.Country,
+                        //          b: visitor.Budget);
             visitor.HotelID = hotel;
             visitorRepository.Update(visitor);
             return true;
         }
         private bool UpdateHotelBalance(Hotel lastHotel, Hotel newHotel, int cost)
         {
+            //lastHotel = new Hotel(hid: lastHotel.HotelID,
+              //                    mid: lastHotel.Managementid,
+                //                  name: lastHotel.Name,
+                  //                country: lastHotel.Country,
+                    //              cost: lastHotel.Cost + cost);
+            //newHotel = new Hotel(hid: newHotel.HotelID,
+              //                    mid: newHotel.Managementid,
+                //                  name: newHotel.Name,
+                  //                country: newHotel.Country,
+                    //              cost: newHotel.Cost - cost);
+
             lastHotel.Cost += cost;
             newHotel.Cost -= cost;
             hotelRepository.Update(lastHotel);
@@ -89,11 +105,11 @@ namespace ComponentBuisinessLogic
         }
         private bool CheckOportunityToBuy(int cost, Hotel hotel)
         {
-            return cost < hotel.Cost;
+            return cost <= hotel.Cost;
         }
-        public List<Availabledeal> GetAllDeals()
+        public List<Availabledeal> GetLimitDeals()
         {
-            return dealsRepository.GetAll();
+            return dealsRepository.GetLimit(100);
         }
         public bool AddNewUser(string login, string hash, int perms)
         {
@@ -101,6 +117,7 @@ namespace ComponentBuisinessLogic
             {
                 return false;
             }
+            //Userinfo user = new Userinfo(login: login,hash: hash, per: perms);
             Userinfo user = new Userinfo { Login = login, Hash = hash, Permission = perms };
             userInfoRepository.Add(user);
             return true;
@@ -116,9 +133,9 @@ namespace ComponentBuisinessLogic
             userInfoRepository.Delete(user);
             return true;
         }
-        public List<Userinfo> GetAllUsers()
+        public List<Userinfo> GetLimitUsers(int limit)
         {
-            return userInfoRepository.GetAll();
+            return userInfoRepository.GetLimit(limit);
         }
     }
 }

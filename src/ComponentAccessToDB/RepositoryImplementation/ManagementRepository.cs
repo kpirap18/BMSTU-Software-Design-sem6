@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ComponentBuisinessLogic;
+
 
 namespace ComponentAccessToDB
 {
@@ -21,6 +23,9 @@ namespace ComponentAccessToDB
         {
             try
             {
+                //element = new Management(mid: db.Managements.Count() + 1,
+                  //                       aid: element.Analysistid, 
+                    //                     mmid: element.Managerid);
                 element.Managementid = db.Managements.Count() + 1;
                 db.Managements.Add(element);
                 db.SaveChanges();
@@ -33,9 +38,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<Management> GetAll()
+        public List<Management> GetLimit(int limit)
         {
-            IQueryable<Management> managament = db.Managements;
+            IQueryable<Management> managament = db.Managements.OrderBy(z => z.Managementid).Where(z => z.Managementid < limit);
             return managament.Count() > 0 ? managament.ToList() : null;
         }
         public void Update(Management element)

@@ -27,7 +27,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\ComponentBuisinessLogic.csproj": {
+                "projectPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\ComponentBuisinessLogic.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -102,6 +106,74 @@
         }
       }
     },
+    "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\ComponentBuisinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\ComponentBuisinessLogic.csproj",
+        "projectName": "ComponentBuisinessLogic",
+        "projectPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\ComponentBuisinessLogic.csproj",
+        "packagesPath": "C:\\Users\\kiv09\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kiv09\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\TrasferSystemTests\\TrasferSystemTests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -128,6 +200,9 @@
             "projectReferences": {
               "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentAccessToDB\\ComponentAccessToDB.csproj": {
                 "projectPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentAccessToDB\\ComponentAccessToDB.csproj"
+              },
+              "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\ComponentBuisinessLogic.csproj": {
+                "projectPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\ComponentBuisinessLogic.csproj"
               }
             }
           }

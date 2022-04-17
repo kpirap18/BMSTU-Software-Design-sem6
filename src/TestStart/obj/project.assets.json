@@ -1972,6 +1972,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "ComponentBuisinessLogic": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.Extensions.Configuration.Json": "5.0.0",
@@ -1989,11 +1990,27 @@
           "bin/placeholder/ComponentAccessToDB.dll": {}
         }
       },
+      "ComponentBuisinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.6",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.6",
+          "Serilog": "2.10.0"
+        },
+        "compile": {
+          "bin/placeholder/ComponentBuisinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentBuisinessLogic.dll": {}
+        }
+      },
       "TrasferSystemTests/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "ComponentAccessToDB": "1.0.0",
+          "ComponentBuisinessLogic": "1.0.0",
           "MSTest.TestAdapter": "2.1.1",
           "MSTest.TestFramework": "2.1.1",
           "Microsoft.NET.Test.Sdk": "16.7.1",
@@ -6705,6 +6722,11 @@
       "type": "project",
       "path": "../ComponentAccessToDB/ComponentAccessToDB.csproj",
       "msbuildProject": "../ComponentAccessToDB/ComponentAccessToDB.csproj"
+    },
+    "ComponentBuisinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../ComponentBuisinessLogic/ComponentBuisinessLogic.csproj",
+      "msbuildProject": "../ComponentBuisinessLogic/ComponentBuisinessLogic.csproj"
     },
     "TrasferSystemTests/1.0.0": {
       "type": "project",

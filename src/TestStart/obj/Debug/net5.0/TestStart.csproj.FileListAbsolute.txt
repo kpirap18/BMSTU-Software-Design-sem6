@@ -262,3 +262,5 @@ C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\obj\Debug
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\obj\Debug\net5.0\ref\TestStart.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\obj\Debug\net5.0\TestStart.pdb
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\obj\Debug\net5.0\TestStart.genruntimeconfig.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\bin\Debug\net5.0\ComponentBuisinessLogic.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\bin\Debug\net5.0\ComponentBuisinessLogic.pdb

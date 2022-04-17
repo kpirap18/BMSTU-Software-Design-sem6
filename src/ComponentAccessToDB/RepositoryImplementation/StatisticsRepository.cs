@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ComponentBuisinessLogic;
+
 
 namespace ComponentAccessToDB
 {
@@ -21,6 +23,9 @@ namespace ComponentAccessToDB
         {
             try
             {
+                //element = new Statistic(sid: db.Statistics.Count() + 1,
+                  //                     number: element.NumberOfTrips,
+                    //                   ar: element.AverageRating);
                 element.Statisticsid = db.Statistics.Count() + 1;
                 db.Statistics.Add(element);
                 db.SaveChanges();
@@ -33,9 +38,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<Statistic> GetAll()
+        public List<Statistic> GetLimit(int limit)
         {
-            IQueryable<Statistic> stats = db.Statistics;
+            IQueryable<Statistic> stats = db.Statistics.OrderBy(z => z.Statisticsid).Where(z => z.Statisticsid < limit);
             return stats.Count() > 0 ? stats.ToList() : null;
         }
         public void Update(Statistic element)

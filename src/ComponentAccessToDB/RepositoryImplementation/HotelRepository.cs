@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ComponentBuisinessLogic;
+
 
 namespace ComponentAccessToDB
 {
@@ -21,6 +23,11 @@ namespace ComponentAccessToDB
         {
             try
             {
+                //element = new Hotel(hid: db.Hotels.Count() + 1,
+                  //                  mid: element.Managementid,
+                    //                name: element.Name,
+                      //              country: element.Country,
+                        //            cost: element.Cost);
                 element.HotelID = db.Hotels.Count() + 1;
                 db.Hotels.Add(element);
                 db.SaveChanges();
@@ -33,9 +40,9 @@ namespace ComponentAccessToDB
                 // _logger.LogError(ex.Message);
             }
         }
-        public List<Hotel> GetAll()
+        public List<Hotel> GetLimit(int limit)
         {
-            IQueryable<Hotel> Hotels = db.Hotels;
+            IQueryable<Hotel> Hotels = db.Hotels.OrderBy(z => z.HotelID).Where(z => z.HotelID < limit);
             return Hotels.Count() > 0 ? Hotels.ToList() : null;
         }
         public void Update(Hotel element)

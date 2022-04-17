@@ -665,6 +665,21 @@
         "compile": {
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
+      },
+      "ComponentBuisinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.6",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.6",
+          "Serilog": "2.10.0"
+        },
+        "compile": {
+          "bin/placeholder/ComponentBuisinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ComponentBuisinessLogic.dll": {}
+        }
       }
     }
   },
@@ -2584,10 +2599,16 @@
         "system.threading.timer.4.0.1.nupkg.sha512",
         "system.threading.timer.nuspec"
       ]
+    },
+    "ComponentBuisinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../ComponentBuisinessLogic/ComponentBuisinessLogic.csproj",
+      "msbuildProject": "../ComponentBuisinessLogic/ComponentBuisinessLogic.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "ComponentBuisinessLogic >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.6",
       "Microsoft.Extensions.Configuration >= 5.0.0",
@@ -2626,7 +2647,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\ComponentBuisinessLogic.csproj": {
+              "projectPath": "C:\\Users\\kiv09\\Documents\\sem6\\BMSTU-Software-Design-sem6\\src\\ComponentBuisinessLogic\\ComponentBuisinessLogic.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

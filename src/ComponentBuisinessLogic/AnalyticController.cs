@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ComponentAccessToDB;
-using Microsoft.Extensions.Logging;
+
 
 namespace ComponentBuisinessLogic
 {
     public class AnalyticController : UserController
     {
         public AnalyticController(Userinfo user, 
-                                  FunctionRepository funcRep, 
-                                  VisitorRepository visitorRep, 
-                                  HotelRepository hotelRep, 
-                                  ManagementRepository managementRep, 
-                                  InterestVisitorsRepository intervisitorRep,
-                                  StatisticsRepository statRep) : 
+                                  IFunctionsRepository funcRep, 
+                                  IVisitorRepository visitorRep, 
+                                  IHotelRepository hotelRep, 
+                                  IManagementRepository managementRep, 
+                                  IInterestVisitorsRepository intervisitorRep,
+                                  IStatisticsRepository statRep) : 
             base(user, funcRep, visitorRep, hotelRep, managementRep, intervisitorRep, statRep)
         {
         }
-        public List<InterestVisitor> GetAllInterstVisitors()
+        public List<InterestVisitor> GetLimitInterstVisitors()
         {
             Management management = managementRepository.FindByAnalytic(_user.Id);
             return interestVisitors.GetVisitorsByManagement(management);
@@ -37,7 +36,11 @@ namespace ComponentBuisinessLogic
             {
                 return false;
             }
+            //InterestVisitor newDesireVisitor = new InterestVisitor(mid: management.Managementid, 
+            //                                                     vid: visitor.VisitorID, 
+            //                                                   hid: visitor.HotelID);
             InterestVisitor newDesireVisitor = new InterestVisitor { Managementid = management.Managementid, VisitorID = visitor.VisitorID, HotelID = visitor.HotelID };
+
             interestVisitors.Add(newDesireVisitor);
             return true;
         }

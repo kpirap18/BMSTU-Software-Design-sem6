@@ -250,3 +250,5 @@ C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\obj\Debug\net5.0\ref\TrasferSystemTests.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\obj\Debug\net5.0\TrasferSystemTests.pdb
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\obj\Debug\net5.0\TrasferSystemTests.genruntimeconfig.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\bin\Debug\net5.0\ComponentBuisinessLogic.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TrasferSystemTests\bin\Debug\net5.0\ComponentBuisinessLogic.pdb

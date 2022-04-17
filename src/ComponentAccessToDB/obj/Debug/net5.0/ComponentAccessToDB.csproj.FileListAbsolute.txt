@@ -46,3 +46,6 @@ C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentAccessToDB
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentAccessToDB\obj\Debug\net5.0\ref\ComponentAccessToDB.dll
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentAccessToDB\obj\Debug\net5.0\ComponentAccessToDB.pdb
 C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentAccessToDB\obj\Debug\net5.0\ComponentAccessToDB.genruntimeconfig.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentAccessToDB\bin\Debug\net5.0\ComponentBuisinessLogic.dll
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentAccessToDB\bin\Debug\net5.0\ComponentBuisinessLogic.pdb
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\ComponentAccessToDB\obj\Debug\net5.0\ComponentAccessToDB.csproj.CopyComplete

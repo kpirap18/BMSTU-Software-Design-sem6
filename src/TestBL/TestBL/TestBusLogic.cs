@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ComponentBuisinessLogic;
-using ComponentAccessToDB;
 using System.Collections.Generic;
 using System;
 using Microsoft.Extensions.Logging;
@@ -14,312 +13,142 @@ namespace TestBL
         public void TestUserController()
         {
             Userinfo user = new Userinfo();
-            FunctionRepository funcRep = new FunctionRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Guest)));
-            VisitorRepository visitorRep = new VisitorRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Guest))); ;
-            HotelRepository hotelRep = new HotelRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Guest)));
-            ManagementRepository managementRep = new ManagementRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Guest)));
-            InterestVisitorsRepository interestVisitorRep = new InterestVisitorsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Guest)));
-            StatisticsRepository statRep = new StatisticsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Guest)));
+            IFunctionsRepository funcRep = new FunctionRepository();
+            IVisitorRepository visitorRep = new VisitorRepository();
+            IHotelRepository hotelRep = new HotelRepository();
+            IManagementRepository managementRep = new ManagementRepository();
+            IInterestVisitorsRepository interestVisitorRep = new InterestVisitorsRepository();
+            IStatisticsRepository statRep = new StatisticsRepository();
 
 
             UserController rep = new UserController(user, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep);
-            List<Visitor> check = rep.GetAllVisitors();
-            if (check != null)
-            {
-                Console.WriteLine("PASSED GetAllVisitors");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetAllVisitors");
-            }
+            List<Visitor> check = rep.GetLimitVisitors(100);
+            Assert.IsNotNull(check, "GetLimitVisitors");
+
 
             List<VisitorHotelStat> check2 = rep.GetVisitorHotelStat();
-            if (check2 != null)
-            {
-                Console.WriteLine("PASSED GetVisitorHotelStat");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetVisitorHotelStat");
-            }
+            Assert.IsNotNull(check2, "GetVisitorHotelStat");
 
             List<Visitor> check3 = rep.GetVisitorsByHotel(1);
-            if (check3 != null)
-            {
-                Console.WriteLine("PASSED GetVisitorsByHotel");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetVisitorsByHotel");
-            }
+            Assert.IsNotNull(check3, "GetVisitorsByHotel");
+            
 
             Visitor check4 = rep.FindVisitorByID(1);
-            if (check4 != null)
-            {
-                Console.WriteLine("PASSED FindVisitorByID");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED FindVisitorByID");
-            }
+            Assert.IsNotNull(check4, "FindVisitorByID");
 
             Visitor check5 = rep.FindVisitorByName("Mike Elliott");
-            if (check5 != null)
-            {
-                Console.WriteLine("PASSED FindVisitorByName");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED FindVisitorByName");
-            }
+            Assert.IsNotNull(check5, "FindVisitorByName");
 
-            List<Hotel> check6 = rep.GetAllHotels();
-            if (check6 != null)
-            {
-                Console.WriteLine("PASSED GetAllHotels");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetAllHotels");
-            }
+            List<Hotel> check6 = rep.GetLimitHotels();
+            Assert.IsNotNull(check6, "GetLimitHotels");
 
             Hotel check7 = rep.FindHotelByID(1);
-            if (check7 != null)
-            {
-                Console.WriteLine("PASSED FindHotelByID");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED FindHotelByID");
-            }
+            Assert.IsNotNull(check7, "FindHotelByID");
 
             Hotel check8 = rep.FindHotelByName("Hotel1");
-            if (check8 != null)
-            {
-                Console.WriteLine("PASSED FindHotelByName");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED FindHotelByName");
-            }
+            Assert.IsNotNull(check8, "FindHotelByName");
 
             Statistic check9 = rep.GetVisitorStatistic(1);
-            if (check9 != null)
-            {
-                Console.WriteLine("PASSED GetVisitorStatistic");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetVisitorStatistic");
-            }
+            Assert.IsNotNull(check9, "GetVisitorStatistic");
         }
 
 
         [TestMethod]
         public void TestAnalyticController()
         {
-            Userinfo user = new Userinfo {Id = 2,  Hash = "3456", Login = "3456" };
-            FunctionRepository funcRep = new FunctionRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Analytic)));
-            VisitorRepository visitorRep = new VisitorRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Analytic))); ;
-            HotelRepository hotelRep = new HotelRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Analytic)));
-            ManagementRepository managementRep = new ManagementRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Analytic)));
-            InterestVisitorsRepository interestVisitorRep = new InterestVisitorsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Analytic)));
-            StatisticsRepository statRep = new StatisticsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Analytic)));
+           // Userinfo user = new Userinfo(id: 2, hash: "3456", login: "3456" );
+            Userinfo user = new Userinfo { Id = 2, Hash = "3456", Login = "3456" };
+            IFunctionsRepository funcRep = new FunctionRepository();
+            IVisitorRepository visitorRep = new VisitorRepository(); ;
+            IHotelRepository hotelRep = new HotelRepository();
+            IManagementRepository managementRep = new ManagementRepository();
+            IInterestVisitorsRepository interestVisitorRep = new InterestVisitorsRepository();
+            IStatisticsRepository statRep = new StatisticsRepository();
 
 
             AnalyticController rep = new AnalyticController(user, funcRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep);
 
 
-            //List<InterestVisitor> check1 = rep.GetAllInterstVisitors();
-            if (rep != null)
-            {
-                Console.WriteLine("PASSED GetAllInterstVisitors");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetAllInterstVisitors");
-            }
+            List<InterestVisitor> check1 = rep.GetLimitInterstVisitors();
+            Assert.IsNotNull(check1, "GetLimitInterstVisitors");
 
             bool check2 = rep.AddInterestVisitor(1);
-            if (check2 == true)
-            {
-                Console.WriteLine("PASSED AddInterestVisitor");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED AddInterestVisitor");
-            }
+            Assert.AreEqual(check2, true, "AddInterestVisitor");
 
             bool check3 = rep.DeleteInterestVisitor(1);
-            if (check3 == true)
-            {
-                Console.WriteLine("PASSED DeleteInterestVisitor");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED DeleteInterestVisitor");
-            }
+            Assert.AreEqual(check3, true, "DeleteInterestVisitor");
         }
 
         [TestMethod]
         public void TestManagerController()
         {
-            Userinfo user = new Userinfo { Id = 2,  Hash = "3456", Login = "3456" };
-            FunctionRepository funcRep = new FunctionRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Manager)));
-            AvailableDealsRepository dealRep = new AvailableDealsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Manager)));
-            VisitorRepository visitorRep = new VisitorRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Manager))); ;
-            HotelRepository hotelRep = new HotelRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Manager)));
-            ManagementRepository managementRep = new ManagementRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Manager)));
-            InterestVisitorsRepository interestVisitorRep = new InterestVisitorsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Manager)));
-            StatisticsRepository statRep = new StatisticsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Manager)));
+            //Userinfo user = new Userinfo(id: 2, hash: "3456", login: "3456");
+            Userinfo user = new Userinfo { Id = 2, Hash = "3456", Login = "3456" };
+
+            IFunctionsRepository funcRep = new FunctionRepository();
+            IAvailableDealsRepository dealRep = new AvailableDealsRepository();
+            IVisitorRepository visitorRep = new VisitorRepository(); ;
+            IHotelRepository hotelRep = new HotelRepository();
+            IManagementRepository managementRep = new ManagementRepository();
+            IInterestVisitorsRepository interestVisitorRep = new InterestVisitorsRepository();
+            IStatisticsRepository statRep = new StatisticsRepository();
 
             ManagerController rep = new ManagerController(user, funcRep, dealRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep);
 
-            List<InterestVisitor> check1 = rep.GetAllInterestVisitors();
-            if (check1 != null)
-            {
-                Console.WriteLine("PASSED GetAllInterestVisitors");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetAllInterestVisitors");
-            }
+            List<InterestVisitor> check1 = rep.GetLimitInterestVisitors();
+            Assert.IsNotNull(check1, "GetLimitInterestVisitors");
 
             bool check2 = rep.RequestVisitor(1, 100);
-            if (check2 == true)
-            {
-                Console.WriteLine("PASSED RequestVisitor");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED RequestVisitor");
-            }
+            Assert.AreEqual(check2, true, "RequestVisitor");
 
             bool check3 = rep.ConfirmDeal(12);
-            if (check3 == true)
-            {
-                Console.WriteLine("PASSED ConfirmDeal");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED ConfirmDeal");
-            }
+            Assert.AreEqual(check3, true, "ConfirmDeal");
 
             bool check4 = rep.RejectDeal(12);
-            if (check4 == true)
-            {
-                Console.WriteLine("PASSED RejectDeal");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED RejectDeal");
-            }
+            Assert.AreEqual(check4, true, "RejectDeal");
 
             List<Availabledeal> check5 = rep.GetIncomingDeals();
-            if (check5 != null)
-            {
-                Console.WriteLine("PASSED GetIncomingDeals");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetIncomingDeals");
-            }
+            Assert.IsNotNull(check5, "GetIncomingDeals");
 
             List<Availabledeal> check6 = rep.GetOutgoaingDeals();
-            if (check6 != null)
-            {
-                Console.WriteLine("PASSED GetOutgoaingDeals");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetOutgoaingDeals");
-            }
+            Assert.IsNotNull(check6, "GetOutgoaingDeals");
 
             bool check7 = rep.DeleteInterestVisitor(1);
-            if (check7 == true)
-            {
-                Console.WriteLine("PASSED DeleteInterestVisitor");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED DeleteInterestVisitor");
-            }
+            Assert.AreEqual(check7, true, "DeleteInterestVisitor");
         }
 
         [TestMethod]
         public void TestModeratorController()
         {
             Userinfo user = new Userinfo();
-            FunctionRepository funcRep = new FunctionRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Moder)));
-            UserInfoRepository userRep  = new UserInfoRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Moder)));
-            AvailableDealsRepository dealRep = new AvailableDealsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Moder)));
-            VisitorRepository visitorRep = new VisitorRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Moder))); ;
-            HotelRepository hotelRep = new HotelRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Moder)));
-            ManagementRepository managementRep = new ManagementRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Moder)));
-            InterestVisitorsRepository interestVisitorRep = new InterestVisitorsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Moder)));
-            StatisticsRepository statRep = new StatisticsRepository(new transfersystemContext(Connection.GetConnection((int)Permissions.Moder)));
+            IFunctionsRepository funcRep = new FunctionRepository();
+            IUserInfoRepository userRep  = new UserInfoRepository();
+            IAvailableDealsRepository dealRep = new AvailableDealsRepository();
+            IVisitorRepository visitorRep = new VisitorRepository(); ;
+            IHotelRepository hotelRep = new HotelRepository();
+            IManagementRepository managementRep = new ManagementRepository();
+            IInterestVisitorsRepository interestVisitorRep = new InterestVisitorsRepository();
+            IStatisticsRepository statRep = new StatisticsRepository();
 
             ModeratorController rep = new ModeratorController(user, funcRep, userRep, dealRep, visitorRep, hotelRep, managementRep, interestVisitorRep, statRep);
 
             bool check1 = rep.MakeDeal(12);
-            if (check1 == true)
-            {
-                Console.WriteLine("PASSED MakeDeal");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED MakeDeal");
-            }
+            Assert.AreEqual(check1, true, "MakeDeal");
 
             bool check2 = rep.DeleteDeal(13);
-            if (check2 == true)
-            {
-                Console.WriteLine("PASSED DeleteDeal");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED DeleteDeal");
-            }
+            Assert.AreEqual(check2, true, "DeleteDeal");
 
-            List<Availabledeal> check3 = rep.GetAllDeals();
-            if (check3 != null)
-            {
-                Console.WriteLine("PASSED GetAllDeals");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetAllDeals");
-            }
+            List<Availabledeal> check3 = rep.GetLimitDeals();
+            Assert.IsNotNull(check3, "GetLimitDeals");
 
             bool check4 = rep.AddNewUser("log1", "123", 1);
-            if (check4 == true)
-            {
-                Console.WriteLine("PASSED AddNewUser");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED AddNewUser");
-            }
+            Assert.AreEqual(check4, true, "AddNewUser");
 
             bool check5 = rep.DeleteUser(101);
-            if (check5 == true)
-            {
-                Console.WriteLine("PASSED DeleteUser");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED DeleteUser");
-            }
+            Assert.AreEqual(check5, true, "DeleteUser");
 
-            List<Userinfo> check6 = rep.GetAllUsers();
-            if (check6 != null)
-            {
-                Console.WriteLine("PASSED GetAllUsers");
-            }
-            else
-            {
-                Console.WriteLine("        FAILED GetAllUsers");
-            }
+            List<Userinfo> check6 = rep.GetLimitUsers(100);
+            Assert.IsNotNull(check6, "GetLimitUsers");
         }
 
     }

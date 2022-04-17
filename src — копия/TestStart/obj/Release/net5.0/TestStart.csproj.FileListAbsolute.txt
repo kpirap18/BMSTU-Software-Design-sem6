@@ -1,0 +1,5 @@
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\obj\Release\net5.0\TestStart.csproj.AssemblyReference.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\obj\Release\net5.0\TestStart.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\obj\Release\net5.0\TestStart.AssemblyInfoInputs.cache
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\obj\Release\net5.0\TestStart.AssemblyInfo.cs
+C:\Users\kiv09\Documents\sem6\BMSTU-Software-Design-sem6\src\TestStart\obj\Release\net5.0\TestStart.csproj.CoreCompileInputs.cache
