@@ -1,0 +1,25 @@
+2022-05-17 23:23:48.717 +03:00 [INF] CheckPerms admin at "2022-05-17T20:23:48.6951407Z"
+2022-05-17 23:23:48.791 +03:00 [INF] CheckPerms admin at "2022-05-17T20:23:48.7909665Z" Модератор
+2022-05-17 23:23:50.160 +03:00 [INF] GetAllVisitors_Click admin at "2022-05-17T20:23:50.1601293Z"
+2022-05-17 23:23:50.208 +03:00 [INF] Entity Framework Core 5.0.6 initialized 'transfersystemContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2022-05-17 23:23:50.262 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__limit_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v.visitorid, v.age, v.budget, v.country, v.hotelid, v.name, v.statistics
+FROM visitor AS v
+WHERE v.visitorid < @__limit_0
+ORDER BY v.visitorid
+2022-05-17 23:23:54.364 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v.visitorid, v.age, v.budget, v.country, v.hotelid, v.name, v.statistics
+FROM visitor AS v
+WHERE v.visitorid = @__p_0
+LIMIT 1
+2022-05-17 23:23:55.859 +03:00 [WRN] GetVisitorByID_Click admin at "2022-05-17T20:23:55.8595228Z" Посетитель не найден
+2022-05-17 23:23:57.057 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__limit_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT h.hotelid, h.cost, h.country, h.managementid, h.name, h.stars
+FROM hotel AS h
+WHERE h.hotelid < @__limit_0
+ORDER BY h.hotelid
+2022-05-17 23:24:00.254 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT h.hotelid, h.cost, h.country, h.managementid, h.name, h.stars
+FROM hotel AS h
+WHERE h.hotelid = @__p_0
+LIMIT 1
